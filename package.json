@@ -8,8 +8,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "windows": "del .\\dist\\*.js && tsc && node .\\dist\\index.js",
-    "linux": "rm ./dist/*.js && tsc && node ./dist/index.js"
+    "start": "rm ./dist/*.js && tsc && node ./dist/index.js"
   },
   "keywords": [],
   "author": "",
