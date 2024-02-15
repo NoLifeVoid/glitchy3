@@ -1,10 +1,17 @@
 import { Request, Response } from "express"
 import cors from "cors"
-import helmet from "helmet"
+const compression = require("compression");
+const helmet = require("helmet");
 const express = require('express')
 const app = express()
 const port = 3000
 
+const RateLimit = require("express-rate-limit");
+const limiter = RateLimit({
+  windowMs: 1 * 60 * 1000,
+  max: 20,
+});
+app.use(limiter);
 app.use(cors())
 app.use(helmet())
 
